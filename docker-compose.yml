@@ -15,9 +15,9 @@ services:
 
   frontend:
     build:
-      context: ./frontend_vuejs
+      context: ./frontend
     command: npm run serve
     volumes:
-      - ./frontend_vuejs:/app
+      - ./frontend:/app
     ports:
       - "8080:8080"

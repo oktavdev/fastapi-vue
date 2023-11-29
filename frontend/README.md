@@ -1,4 +1,4 @@
-# frontend_vuejs
+# frontend
 
 ## Project setup
 ```
