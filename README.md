@@ -12,14 +12,14 @@ This is an example app using FastAPI as backend and Vue.js as frontend.
 Backend and Frontend are fully decoupled.
 I've put them together in the repo for the sake of readability and portability.
 
-In a real life scenario we would deploy the Frontend and Backend separately (for example AWS instances) 
+In a real life scenario we would deploy the Frontend and Backend separately (for example 2  AWS instances) 
 and Fronted would be designed by contract based on the OpenAPI specification (Swagger).
 
 ## Why FastAPI
 Fast stands not only for performance but also for speed of development.
-FastAPI provides a full REST API framework out of the box - no wheels and hassle typing.
+FastAPI provides a full REST API framework out of the box – no wheels and excessive typing.
 
-One of the beautiful FastAPI features – auto generation of OpenAPI specification (Swagger)based on the typehints – simply beautiful.
+One of the beautiful FastAPI features – auto generation of OpenAPI specification (Swagger) based on the typehints – simply beautiful.
 
 
 ## Why Vue.js
@@ -49,7 +49,7 @@ Weather data is from https://open-meteo.com/
 On the frontend we have a Vue component getting data from the endpoint.
 
 Native Vue and naive Bootstrap, no other dependencies (frontend/package.json/dependencies).
-For more sharp and beautiful UI you may easily use other open source libs (e.g. vue-select for autocompleter).
+For sharper UI you may easily use other open source libs (e.g. vue-select for autocompleter).
 
 City autocomplete data is from https://www.travelpayouts.com/
 
@@ -64,7 +64,7 @@ Make sure you have just the following installed in your system (tested on Linux/
 
 ### Clone the project
 
-If you do not use git as VC just download/unpack the zip from https://github.com/oktavdev/fastapi_vue_app
+If you do not use git as VCS just download, unpack the zip from https://github.com/oktavdev/fastapi_vue_app
 
 else
 
@@ -74,7 +74,7 @@ git clone https://github.com/oktavdev/fastapi_vue_app.git
 
 ### Run
 
-Change directory to {{ repoRoot }} and
+Change directory to repo root and
 ```shell
 docker-compose up --build
 ```

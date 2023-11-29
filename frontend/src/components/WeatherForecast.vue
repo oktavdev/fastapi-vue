@@ -1,9 +1,10 @@
+<!-- TODO: Add map of location -->
 <template>
 
   <div id="weather-forecast" class="container">
     <div class="row">
       <div class="col-3 fs-2">Weather Forecast</div>
-      <div class="col fs-2">{{ location.name }}</div>
+      <div class="col fs-2">{{ location.name }} ({{ location.code }}) / {{ location.country_name }} ({{ location.country_code }})</div>
     </div>
     <div class="row mt-4">
       <div class="col col-md-3">
@@ -12,7 +13,7 @@
                  placeholder="Search location">
           <label for="search">Search location</label>
         </div>
-        <div v-if="locations" style="height: 20rem; margin-bottom: 2rem; overflow: auto">
+        <div v-if="locations" style="height: 30rem; margin-bottom: 2rem; overflow: auto">
           <div class="list-group">
             <a
                 href="#"
@@ -69,6 +70,9 @@ export default {
     return {
       location: { // A default location for first page load
         name: 'Zanzibar',
+        code: 'ZNZ',
+        country_name: 'Tanzania',
+        country_code: 'TZ',
         coordinates: {
           lat: -6.218466,
           lon: 39.221184
