@@ -1,8 +1,8 @@
 <template>
 
   <div id="weather-forecast" class="container">
-    <div class="row row-cols-md-2">
-      <div class="col fs-2">Weather Forecast</div>
+    <div class="row">
+      <div class="col-3 fs-2">Weather Forecast</div>
       <div class="col fs-2">{{ location.name }}</div>
     </div>
     <div class="row mt-4">
@@ -29,7 +29,7 @@
       <div class="col-md-9">
         <div v-if="weather">
           <div class="row g-1">
-            <div class="col-4 col-md-3 col-lg-2" v-for="data in weather.slice(0, 12)" :key="data.time">
+            <div class="col-6 col-md-3 col-lg-2" v-for="data in weather" :key="data.time">
               <div class="card text-center">
                 <div class="card-header">
                   <small>{{ formatDate(data.time) }}</small>

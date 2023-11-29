@@ -1,8 +1,11 @@
 # FastAPI + Vue app
 
 > ## Disclaimer
+> 
 > This is a playground app, not suitable for production environment
-> It is designed for those who need a boilerplate for FastApi + Vue.js development.
+> 
+> Designed for those who need a boilerplate for FastApi + Vue.js development.
+
 
 An example app using FastAPI as backend and Vue.js as frontend. You can use it to create subapps or components
 Just create a FastAPI endpoint (if needed) and a Vue component.
