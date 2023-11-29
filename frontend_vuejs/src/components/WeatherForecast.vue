@@ -37,14 +37,14 @@
                 <div class="card-body">
                   <div>{{ data.temperature_2m_max }}<sup>{{ daily_units.temperature_2m_max }}</sup></div>
                   <div>{{ data.temperature_2m_min }}<sup>{{ daily_units.temperature_2m_min }}</sup></div>
-                  <div class="border-bottom">
+                  <div class="border-top">
                     <small>
                       <sup :style="data.precipitation_probability_max < 50 ? 'filter: grayscale(100%); opacity: 0.4' : ''">🌧</sup>
                       {{ data.precipitation_probability_max ? data.precipitation_probability_max : 0 }}
                       {{ daily_units.precipitation_probability_max }}
                     </small>
                   </div>
-                  <div class="small">
+                  <div class="small border-top">
                     <div>☴</div>
                     {{ data.wind_speed_10m_max }} <sup>{{ daily_units.wind_speed_10m_max }}</sup>
                   </div>
