@@ -4,13 +4,14 @@ services:
   backend:
     build:
       context: ./backend
-    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
     volumes:
       - ./backend:/app
     ports:
       - "8000:8000"
     depends_on:
       - frontend
+    restart: on-failure
 
   frontend:
     build:
