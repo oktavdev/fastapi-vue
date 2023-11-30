@@ -48,8 +48,9 @@ Weather data is from https://open-meteo.com/
 #### Frontend
 On the frontend we have a Vue component getting data from the endpoint.
 
-Native Vue and naive Bootstrap, no other dependencies (frontend/package.json/dependencies).
-For sharper UI you may easily use other open source libs (e.g. vue-select for autocompleter).
+Native Vue 3 and Bootstrap 5, no other dependencies.
+That is quite enough for building a responsive and modern web application. 
+For sharper UI you may easily use open source libs (e.g., vue-select for autocompleter).
 
 City autocomplete data is from https://www.travelpayouts.com/
 
@@ -64,12 +65,12 @@ Make sure you have just the following installed in your system (tested on Linux/
 
 ### Clone the project
 
-If you do not use git as VCS just download, unpack the zip from https://github.com/oktavdev/fastapi_vue_app
+If no git just download, unpack the zip from https://github.com/oktavdev/fastapi-vue
 
 else
 
 ```shell
-git clone https://github.com/oktavdev/fastapi_vue_app.git
+git clone https://github.com/oktavdev/fastapi-vue.git
 ```
 
 ### Run
@@ -78,8 +79,10 @@ Change directory to repo root and
 ```shell
 docker-compose up --build
 ```
+On subsequent runs you can remove the --build flag
 
 - Endpoints: http://localhost:8000/docs
+
 - Frontend: http://localhost:8080
 
 This is it, when accessing Frontend you should see the UI:

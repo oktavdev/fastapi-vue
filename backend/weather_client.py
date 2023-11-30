@@ -41,21 +41,17 @@ async def fetch_and_process_weather_data(
 
 def process_weather_data(weather_data) -> WeatherResponseData:
     """
-    Process the weather data.
+    Process the weather data, adapt to needed response.
     """
-    k = [
+    keys = [
         "time",
         "temperature_2m_min",
         "temperature_2m_max",
         "precipitation_probability_max",
         "wind_speed_10m_max",
     ]
-    a = weather_data["daily"]["time"]
-    b = weather_data["daily"]["temperature_2m_min"]
-    c = weather_data["daily"]["temperature_2m_max"]
-    d = weather_data["daily"]["precipitation_probability_max"]
-    e = weather_data["daily"]["wind_speed_10m_max"]
-    weather = [dict(zip(k, values)) for values in list(zip(a, b, c, d, e))]
+
+    weather = [dict(zip(keys, values)) for values in zip(*[weather_data["daily"][key] for key in keys])]
 
     weather_response = WeatherResponseData(
         weather=weather, daily_units=weather_data["daily_units"]

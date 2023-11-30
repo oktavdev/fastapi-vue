@@ -9,7 +9,7 @@ from models import WeatherResponseData
 app = FastAPI()
 
 origins = [
-    "http://localhost:8080",  # or the address where your Vue.js app is hosted
+    "http://localhost:8080",  # The address where your Vue.js app is hosted
 ]
 
 app.add_middleware(
@@ -23,7 +23,7 @@ app.add_middleware(
 
 @app.get("/")
 def read_root():
-    return {"message": "Hello, FastAPI!"}
+    return {"message": "It works!"}
 
 
 @app.get("/weather/", response_model=WeatherResponseData, tags=["weather"])
