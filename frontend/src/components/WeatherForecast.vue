@@ -2,48 +2,62 @@
 <template>
 
   <div id="weather-forecast" class="container">
-    <div class="row">
-      <div class="col-3 fs-2">Weather Forecast</div>
-      <div class="col fs-2">{{ location.name }} ({{ location.code }}) / {{ location.country_name }}
-        ({{ location.country_code }})
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-3">
+        <span class="fs-3 text-muted">Weather Forecast</span>
+      </div>
+      <div class="col">
+        <span class="fs-3">
+        {{ location.name }} ({{ location.code }}) / {{ location.country_name }} ({{ location.country_code }})
+        </span>
       </div>
     </div>
     <div class="row mt-4">
       <div class="col col-md-3">
         <div class="form-floating mb-2">
-          <input v-model="search" @input="locationAutocomplete" type="search" class="form-control" id="search"
-                 placeholder="Search location">
+          <input
+              v-model="search"
+              @input="locationAutocomplete"
+              type="search"
+              class="form-control text-secondary"
+              id="search"
+              placeholder="Search location"
+          >
           <label for="search">Search location</label>
         </div>
-        <div v-if="locations" style="height: 30rem; margin-bottom: 2rem; overflow: auto">
-          <div class="list-group">
+        <div v-if="locations" class="locations">
+          <div class="list-group" style="border-radius: 0;">
             <a
                 href="#"
-                v-for="location in locations"
-                :key="location.id"
-                @click="selectLocation(location); getWeather(location)"
+                v-for="loc in locations"
+                :key="loc.id"
+                @click="selectLocation(loc); getWeather(loc)"
+                :class="loc === location ? 'list-group-item-dark' : ''"
                 class="list-group-item list-group-item-action"
             >
-              {{ location.name }}
+              {{ loc.name }}
             </a>
           </div>
         </div>
       </div>
       <!-- Well, we've got a number of divs here  -->
       <div class="col-md-9">
-        <div v-if="weather" :style="isWeatherLoading ? 'opacity: 0.2' : ''" class="row g-1">
+        <div
+            v-if="weather"
+            :style="isWeatherLoading ? 'opacity: 0.2' : ''"
+            class="row g-1"
+        >
           <div class="col-6 col-md-3 col-lg-2" v-for="data in weather" :key="data.time">
             <div class="card text-center">
               <div class="card-header">
                 <small>{{ formatDate(data.time) }}</small>
               </div>
-              <div class="card-body">
-                <div>{{ data.temperature_2m_max }}<sup>{{ daily_units.temperature_2m_max }}</sup></div>
-                <div>{{ data.temperature_2m_min }}<sup>{{ daily_units.temperature_2m_min }}</sup></div>
+              <div class="card-body p-1">
+                <div class="small">{{ data.temperature_2m_max }}<sup>{{ daily_units.temperature_2m_max }}</sup></div>
+                <div class="small">{{ data.temperature_2m_min }}<sup>{{ daily_units.temperature_2m_min }}</sup></div>
                 <div class="border-top">
                   <small>
-                    <sup
-                        :style="data.precipitation_probability_max < 50 ? 'filter: grayscale(100%); opacity: 0.4' : ''">
+                    <sup :style="data.precipitation_probability_max < 50 ? 'filter: grayscale(100%); opacity: 0.4' : ''">
                       🌧
                     </sup>
                     {{ data.precipitation_probability_max ? data.precipitation_probability_max : 0 }}
@@ -69,7 +83,6 @@ import {debounce} from "debounce";
 
 export default {
   name: "WeatherForecast",
-
   data() {
     return {
       location: { // A default location for first page load TODO: Get it dynamically
@@ -133,3 +146,24 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.locations {
+  height: 10rem;
+  margin-bottom: 2rem;
+  overflow: auto;
+  border: 2px solid #dee2e6;
+  border-radius: 0.2rem;
+
+  @media (min-width: 768px) {
+    height: 25rem;
+  }
+}
+
+.locations .list-group-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+</style>
+

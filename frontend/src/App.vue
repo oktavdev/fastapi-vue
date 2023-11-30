@@ -5,7 +5,7 @@
       <img alt="Vue logo" width="100" src="./assets/logo.png">
     </div>
 
-    <div class="px-5 my-5">
+    <div class="px-5 my-2">
       <WeatherForecast/>
     </div>
 

@@ -29,9 +29,8 @@ I have chosen Vue.js because it is more friendly for the human and allows for mo
 
 A big personal yes in favour of Vue – the magic can be done in an old-school but friendly HTML way.
 
-## About this implementation
+## Example app - Weather App
 
-### Weather App
 A Hello World app would be too little to showcase the power of Vue.js + FastAPI, so I thought of something 
 interesting for the user.
 
@@ -39,13 +38,13 @@ Here you can see an example implementation – an app showing weather forecast b
 
 Certainly, this is impossible without some nice data, so I have used some no auth external APIs.
 
-#### Backend
+### Backend
 
 On the backend we have a decoupled endpoint returning weather json data.
 
 Weather data is from https://open-meteo.com/
 
-#### Frontend
+### Frontend
 On the frontend we have a Vue component getting data from the endpoint.
 
 Native Vue 3 and Bootstrap 5, no other dependencies.
@@ -65,7 +64,7 @@ Make sure you have just the following installed in your system (tested on Linux/
 
 ### Clone the project
 
-If no git just download, unpack the zip from https://github.com/oktavdev/fastapi-vue
+If no git installed – just download and unpack the zip from https://github.com/oktavdev/fastapi-vue
 
 else
 
@@ -86,7 +85,7 @@ On subsequent runs you can remove the --build flag
 - Frontend: http://localhost:8080
 
 This is it, when accessing Frontend you should see the UI:
-![Example](frontend/public/weather_forecast.png)
+![Example](frontend/public/weather-forecast.png)
 
 
 
