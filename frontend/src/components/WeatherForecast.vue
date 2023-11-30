@@ -1,4 +1,3 @@
-<!-- TODO: Add map of location -->
 <template>
 
   <div id="weather-forecast" class="container">

@@ -12,15 +12,14 @@ This is an example app using FastAPI as backend and Vue.js as frontend.
 Backend and Frontend are fully decoupled.
 I've put them together in the repo for the sake of readability and portability.
 
-In a real life scenario we would deploy the Frontend and Backend separately (for example 2  AWS instances) 
-and Fronted would be designed by contract based on the OpenAPI specification (Swagger).
+In a real life scenario we would deploy the Frontend and Backend separately (for example 2 AWS instances) 
+and Frontend would be designed by contract – based on the OpenAPI specification (Swagger).
 
 ## Why FastAPI
 Fast stands not only for performance but also for speed of development.
-FastAPI provides a full REST API framework out of the box – no wheels and excessive typing.
+FastAPI provides a full REST API framework out of the box – no need for a new wheel and excessive typing.
 
 One of the beautiful FastAPI features – auto generation of OpenAPI specification (Swagger) based on the typehints – simply beautiful.
-
 
 ## Why Vue.js
 React and Vue.js are probably the best choices when speaking about modern JS frameworks.
